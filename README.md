@@ -8,7 +8,7 @@ Below are the task objectives.
 # Pre-Course Assessment
 Instructions:
 For each of the project below you are to create the requested program.
-Your solutions are to be emailed to me susan@tdm.co.uk  by 20/10/2019 as a word document either as screen shots of the code (must be legible) or copy and paste the code. Also include screen shots of your code executing.
+Your solutions are to be emailed as a word document either as screen shots of the code (must be legible) or copy and paste the code. Also include screen shots of your code executing.
 Project 1: Converting a Decision Table into a Program
 You are developing an invoicing application that calculates discount percentages based on the quantity of a product purchased. The logic for calculating discounts is listed in the following decision table. If you need to write a C# method that uses the same logic to calculate the discount, how would you write such a program? The user inputs the quantity and the discount is displayed.  Produce this program in any programming language.
 
