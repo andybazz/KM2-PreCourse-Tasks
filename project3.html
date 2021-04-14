@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+<script>
+ class ValidationError extends Error {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "ValidationError"; // (2)
+  }
+}
+
+  function Divide(x,y) {
+    x = 15;
+    y = null;
+  	let result = x / y;
+        try {
+        	if ( x == null || y == null)
+            throw "x or y null";
+
+          if(isNaN(x) || isNaN(y))
+            throw new ValidationError("Whoops!");;
+
+      } catch (e) {
+      	console.log("Error: " + e);
+      }  finally {
+        document.write("You have reached the end of the function")
+}
+}
+Divide();
+
+
+
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+<script>
+
+ class Product {
+  constructor(Name, Price) {
+    this._Name = Name;
+    this._Price = Price;
+  }
+  get Name() {
+    return this._Name;
+  }
+  set Name(updateName) {
+    this._Name = updateName;
+  }
+  get Price() {
+    return this._Price;
+  }
+  set Price(updateprice) {
+    this._Name = updatePrice;
+  }
+  };
+
+  let ProductDetails = new Product('Laptop', 300);
+  document.write("The product is " + ProductDetails.Name + " and costs £" + ProductDetails.Price);
+
+
+</script>
+
+</body>
+</html>
+
+

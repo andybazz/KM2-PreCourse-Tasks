@@ -1,0 +1,15 @@
+table, th, td {
+  border: 1px solid black;
+  padding:5px;
+  border-collapse: collapse;
+  text-align: center;
+}
+#button {
+	margin:15px 0 0 0;
+	padding:10px;
+	border-radius: 3px;
+}
+#selectDiscount {
+	padding:10px;
+	border: none;
+}

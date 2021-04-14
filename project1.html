@@ -1,0 +1,79 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+<table style="border:1px solid #00000;">
+		<tr>
+		<td>Enter Quantity</td>
+		<td><input id="quantity" type="number" placeholder="1" value="1"></td>
+	</tr>
+	<tr>
+		<td>Quantity < 10</td>
+		<td><p id="cell10">*</p></td>
+	</tr>
+	<tr>
+		<td>Quantity < 50</td>
+		<td><p id="cell50">*</p></td>
+	</tr>
+	<tr>
+		<td>Quantity < 100</td>
+		<td><p id="cell100">*</p></td>
+	</tr>
+	<tr>
+		<td>Select Discount</td>
+		<td> <select name="selectDiscount" id="selectDiscount">
+			 <option value=".05">5%</option>
+			 <option value=".1">10%</option>
+			 <option value=".15">15%</option>
+			 <option value=".2">20%</option>
+		</select></td>
+	</tr>
+</table>
+
+<script>
+function CalculateDiscount() {
+
+	let quantity = document.getElementById('quantity').value; // input by user
+	let discount = document.getElementById('selectDiscount').value;; // discount value array
+	let total = quantity * discount;
+	let total2dec = total.toFixed(2);
+
+	if (quantity < 10 && discount == .05) {
+		document.getElementById('cell10').innerHTML = total2dec;
+	}
+
+	else if (quantity < 50 && quantity >= 10 && discount == .05) {
+		document.getElementById('cell50').innerHTML = total2dec;
+	}
+
+	else if (quantity < 50 && quantity >= 10 && discount == .1) {
+		document.getElementById('cell50').innerHTML = total2dec;
+	}
+	
+	else if (quantity < 100 && quantity >= 50 && discount == .05) {
+		document.getElementById('cell100').innerHTML = total2dec;
+	}
+	
+	else if (quantity < 100 && quantity >= 50 && discount == .1) {
+		document.getElementById('cell100').innerHTML = quantity * discount;
+	}
+	
+	else if (quantity < 100 && quantity >= 50 && discount == .15) {
+		document.getElementById('cell100').innerHTML = quantity * discount;
+	}	
+	else {
+		alert("The selected discount is not applicable to this quantity amount");
+	}
+
+
+};
+</script>
+<input id="button" type="button" value="Calculate Discount" onclick="CalculateDiscount();" />
+<input id="button" type="button" value="Reset" onclick="location.reload();" />
+</body>
+</html>
+

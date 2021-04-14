@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+<script>
+
+ class Product {
+  constructor(Name) {
+    this._Name = Name;
+  }
+  get Name() {
+    return this._Name;
+  }
+  set Name(updateName) {
+    this._Name = updateName;
+  }
+  };
+
+// test product class getter
+  let ProductDetails = new Product('Laptop');
+  console.log("Product Name is: " + ProductDetails.Name);
+
+// set product to null/undefined to test setter, adn to raise an exception
+ProductDetails.Name = "";
+
+// error handling try/catch
+  try {
+   if (Product.Name == null) 
+    throw "Product Name is: null";
+   } catch(e) {
+    console.log(e)
+  } finally {
+    // revert Product name back to laptop
+    ProductDetails.Name = "Laptop";
+    console.log("The Product Name is reverted back to: " + ProductDetails.Name);
+}
+
+</script>
+
+</body>
+</html>
+
+
