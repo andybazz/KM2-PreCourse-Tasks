@@ -5,6 +5,29 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <div class="title">
+    <h1>KM2 PreCourse Task Project 3</h1>
+    <p>Andy Barrington</p>
+    <br>
+    <p><strong>Divide input 1 by input 2</strong></p>
+  </div>
+<table style="border:1px solid #00000;">
+    <tr>
+    <td>Input 1</td>
+    <td><input id="input1" type="number" placeholder="Enter value" value="1"></td>
+  </tr>
+     <tr>
+    <td>Input 2</td>
+    <td><input id="input2" type="number" placeholder="Enter value" value="1"></td>
+  </tr>
+  <tr>
+    <td>Result</td>
+    <td><p id="result"></td>
+  </tr>
+</table>
+<input id="button" type="button" value="Divide" onclick="Divide();" />
+
+
 <script>
  class ValidationError extends Error {
   constructor(message) {
@@ -14,26 +37,28 @@
 }
 
   function Divide(x,y) {
-    x = 15;
-    y = null;
-  	let result = x / y;
+    x = document.getElementById("input1").value;
+    y = document.getElementById("input2").value;
+    let result = x / y;
         try {
-        	if ( x == null || y == null)
+          if ( x == null || y == null)
             throw "x or y null";
 
-          if(isNaN(x) || isNaN(y))
-            throw new ValidationError("Whoops!");;
+          else if(isNaN(x) || isNaN(y)) {
+              throw new ValidationError("Whoops!");
+            }
 
-      } catch (e) {
-      	console.log("Error: " + e);
-      }  finally {
-        document.write("You have reached the end of the function")
-}
-}
-Divide();
+           else {
+            document.getElementById("result").innerHTML = (result);
+          }
+        }
 
+        catch (e) {
+        console.log("Error: " + e);
+        alert("There was an error check the console");
+      } 
 
-
+};
 </script>
 
 </body>
